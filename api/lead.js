@@ -38,6 +38,7 @@ module.exports = async (req, res) => {
 
     // 1. Meta CAPI
     const capiPayload = {
+      test_event_code: 'TEST7400',
       data: [{
         event_name: 'Lead',
         event_time: Math.floor(Date.now() / 1000),
@@ -86,6 +87,20 @@ module.exports = async (req, res) => {
     );
     const amoData = await amoRes.json();
     console.log('amoCRM lead:', JSON.stringify(amoData));
+
+    // 3. Tag qo'shish — alohida so'rov
+    if (amoData && amoData[0] && amoData[0].id) {
+      const tagRes = await fetch(
+        'https://' + AMO_SUBDOMAIN + '.amocrm.ru/api/v4/leads',
+        {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + AMO_TOKEN },
+          body: JSON.stringify([{ id: amoData[0].id, _embedded: { tags: [{ name: 'CAPI' }] } }])
+        }
+      );
+      const tagData = await tagRes.json();
+      console.log('Tag qoshildi:', JSON.stringify(tagData));
+    }
 
     return res.status(200).json({ success: true, capi: capiData, amo: amoData });
 
