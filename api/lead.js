@@ -39,7 +39,7 @@ module.exports = async (req, res) => {
     const firstName    = (name||'').trim().split(' ')[0].toLowerCase();
 
     // 1. Meta CAPI
-    if (PIXEL_ID !== '2013283585928690') {
+    {
       const capiPayload = {
         data: [{
           event_name:       'Lead',
@@ -60,7 +60,7 @@ module.exports = async (req, res) => {
       );
       const capiData = await capiRes.json();
       console.log('CAPI Lead:', capiData);
-    }
+    
 
     // 2. amoCRM — lead yaratish
     const amoPayload = [{
