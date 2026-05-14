@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sayohat — Misр va Turkiya turlari</title>
+  <title>PayFly — Misr va Turkiya turlari</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 
-  <!-- Meta Pixel — PIXEL_ID NI SHUNGA ALMASHTIRING -->
+  <!-- Meta Pixel — YOUR_PIXEL_ID NI ALMASHTIRING -->
   <script>
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
@@ -17,32 +17,29 @@
     document,'script','https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', 'YOUR_PIXEL_ID');
     fbq('track', 'PageView');
-    fbq('track', 'ViewContent', { content_name: 'Sayohat Landing', content_category: 'Travel' });
+    fbq('track', 'ViewContent', { content_name: 'PayFly Landing', content_category: 'Travel' });
   </script>
   <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --ocean:      #0a3d6b;
-      --ocean-mid:  #0e5398;
-      --sky:        #1a7fc4;
-      --sky-light:  #3ba5e8;
-      --gold:       #f5a623;
-      --gold-light: #fbbf5a;
-      --white:      #ffffff;
-      --off:        #f0f7ff;
-      --muted:      #6b8fa8;
-      --text:       #0a2540;
-      --border:     #d0e4f5;
-      --font-h: 'Playfair Display', serif;
-      --font-b: 'DM Sans', sans-serif;
+      --navy:   #0a2a6e;
+      --ocean:  #0e5398;
+      --sky:    #1a7fc4;
+      --gold:   #f5a623;
+      --goldl:  #fbbf5a;
+      --white:  #ffffff;
+      --off:    #f0f7ff;
+      --muted:  #6b8fa8;
+      --text:   #0a2540;
+      --border: #d0e4f5;
+      --fh: 'Playfair Display', serif;
+      --fb: 'DM Sans', sans-serif;
     }
-
     html { scroll-behavior: smooth; }
-    body { background: var(--white); color: var(--text); font-family: var(--font-b); overflow-x: hidden; }
+    body { background: var(--white); color: var(--text); font-family: var(--fb); overflow-x: hidden; line-height: 1.6; }
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-thumb { background: var(--sky); border-radius: 2px; }
 
@@ -50,382 +47,220 @@
     .hero {
       min-height: 100vh;
       background:
-        linear-gradient(180deg, rgba(10,61,107,0.82) 0%, rgba(10,61,107,0.4) 60%, rgba(255,255,255,0) 100%),
+        linear-gradient(180deg, rgba(10,42,110,0.78) 0%, rgba(10,42,110,0.45) 55%, rgba(10,42,110,0.7) 100%),
         url('1.jpg') center/cover no-repeat;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 60px 24px 80px;
-      position: relative;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; padding: 60px 24px 80px;
     }
 
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(245,166,35,0.2);
-      border: 1px solid rgba(245,166,35,0.5);
+      background: rgba(245,166,35,0.18); border: 1px solid rgba(245,166,35,0.5);
       border-radius: 100px; padding: 6px 18px;
-      font-size: 0.8rem; font-weight: 600;
-      color: var(--gold-light); letter-spacing: 1px;
-      text-transform: uppercase; margin-bottom: 24px;
-      animation: fadeUp 0.6s ease both;
+      font-size: 0.78rem; font-weight: 600; color: var(--goldl);
+      letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px;
+      animation: fu 0.6s ease both;
     }
-
     .hero h1 {
-      font-family: var(--font-h);
-      font-size: clamp(2.4rem, 7vw, 5rem);
-      font-weight: 900;
-      color: var(--white);
-      line-height: 1.1;
-      letter-spacing: -1px;
-      max-width: 800px;
-      margin-bottom: 20px;
-      animation: fadeUp 0.6s 0.1s ease both;
+      font-family: var(--fh);
+      font-size: clamp(2.2rem, 6.5vw, 4.8rem);
+      font-weight: 900; color: var(--white);
+      line-height: 1.1; letter-spacing: -1px;
+      max-width: 820px; margin-bottom: 18px;
+      animation: fu 0.6s 0.1s ease both;
     }
     .hero h1 em { color: var(--gold); font-style: normal; }
-
-    .hero p {
-      color: rgba(255,255,255,0.8);
-      font-size: 1.05rem;
-      max-width: 520px;
-      margin-bottom: 40px;
-      font-weight: 300;
-      line-height: 1.7;
-      animation: fadeUp 0.6s 0.2s ease both;
+    .hero-sub {
+      color: rgba(255,255,255,0.82); font-size: 1rem;
+      max-width: 540px; margin-bottom: 14px;
+      font-weight: 300; line-height: 1.7;
+      animation: fu 0.6s 0.15s ease both;
     }
-
+    .hero-tags {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;
+      margin-bottom: 36px;
+      animation: fu 0.6s 0.2s ease both;
+    }
+    .hero-tag {
+      background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25);
+      color: rgba(255,255,255,0.9); font-size: 0.78rem; font-weight: 500;
+      padding: 5px 14px; border-radius: 100px;
+    }
     .hero-btn {
       display: inline-block;
       background: linear-gradient(135deg, var(--gold), #e8941a);
-      color: var(--ocean);
-      font-family: var(--font-b);
-      font-size: 1rem;
-      font-weight: 700;
-      padding: 18px 48px;
-      border-radius: 12px;
-      border: none;
-      cursor: pointer;
-      transition: all 0.25s;
+      color: var(--navy); font-family: var(--fb); font-size: 1.05rem; font-weight: 700;
+      padding: 18px 0; border-radius: 12px; border: none; cursor: pointer;
+      width: 100%; max-width: 420px;
       box-shadow: 0 8px 32px rgba(245,166,35,0.45);
-      animation: fadeUp 0.6s 0.3s ease both, glow 2.5s 1.5s ease-in-out infinite;
-      width: 100%;
-      max-width: 400px;
+      animation: fu 0.6s 0.25s ease both, glow 2.5s 1.5s ease-in-out infinite;
+      transition: transform 0.2s;
     }
-    .hero-btn:hover { transform: translateY(-3px); box-shadow: 0 16px 48px rgba(245,166,35,0.55); }
+    .hero-btn:hover { transform: translateY(-3px); }
 
     @keyframes glow {
       0%,100% { box-shadow: 0 8px 32px rgba(245,166,35,0.45), 0 0 0 0 rgba(245,166,35,0.3); }
       50%      { box-shadow: 0 8px 32px rgba(245,166,35,0.45), 0 0 0 14px rgba(245,166,35,0); }
     }
+    @keyframes fu { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
+    /* ── STATS ── */
+    .stats { background: var(--navy); padding: 40px 24px; }
+    .stats-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; text-align: center; }
+    .stat-num { font-family: var(--fh); font-size: 2rem; font-weight: 900; color: var(--gold); line-height: 1; margin-bottom: 4px; }
+    .stat-lbl { font-size: 0.78rem; color: rgba(255,255,255,0.55); line-height: 1.4; }
 
-    /* ── DESTINATIONS ── */
-    .destinations {
-      background: var(--off);
-      padding: 80px 24px;
-    }
-
-    .sec-label {
-      text-align: center;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--sky);
-      margin-bottom: 10px;
-    }
-    .sec-title {
-      text-align: center;
-      font-family: var(--font-h);
-      font-size: clamp(1.6rem, 3vw, 2.4rem);
-      font-weight: 700;
-      color: var(--ocean);
-      margin-bottom: 48px;
-      letter-spacing: -0.5px;
-    }
+    /* ── SECTIONS ── */
+    .sec-label { text-align:center; font-size:0.72rem; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--sky); margin-bottom:10px; }
+    .sec-title { text-align:center; font-family:var(--fh); font-size:clamp(1.6rem,3vw,2.4rem); font-weight:700; color:var(--navy); margin-bottom:48px; letter-spacing:-0.5px; }
     .sec-title span { color: var(--gold); }
 
-    .dest-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
+    /* ── DESTINATIONS ── */
+    .destinations { background: var(--off); padding: 80px 24px; }
+    .dest-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); gap: 20px; max-width: 1000px; margin: 0 auto; }
 
     .dest-card {
-      border-radius: 20px;
-      overflow: hidden;
-      position: relative;
-      cursor: pointer;
-      transition: transform 0.3s;
-      aspect-ratio: 4/3;
+      border-radius: 20px; overflow: hidden; position: relative;
+      cursor: pointer; transition: transform 0.3s;
+      aspect-ratio: 3/4;
     }
     .dest-card:hover { transform: translateY(-6px); }
-
-    .dest-card img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s;
-    }
+    .dest-card img { width:100%; height:100%; object-fit:cover; transition: transform 0.5s; }
     .dest-card:hover img { transform: scale(1.05); }
-
     .dest-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(0deg, rgba(10,30,60,0.85) 0%, rgba(10,30,60,0.2) 60%, transparent 100%);
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 28px;
+      position:absolute; inset:0;
+      background: linear-gradient(0deg, rgba(10,30,60,0.9) 0%, rgba(10,30,60,0.3) 55%, transparent 100%);
+      display:flex; flex-direction:column; justify-content:flex-end; padding:28px;
     }
-    .dest-flag { font-size: 1.8rem; margin-bottom: 8px; }
-    .dest-name {
-      font-family: var(--font-h);
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 6px;
-    }
-    .dest-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+    .dest-flag { font-size:1.8rem; margin-bottom:8px; }
+    .dest-name { font-family:var(--fh); font-size:1.5rem; font-weight:700; color:var(--white); margin-bottom:10px; }
+    .dest-list { list-style:none; margin-bottom:12px; }
+    .dest-list li { font-size:0.8rem; color:rgba(255,255,255,0.8); padding:2px 0; display:flex; align-items:center; gap:6px; }
+    .dest-list li::before { content:'✓'; color:var(--gold); font-weight:700; font-size:0.75rem; }
+    .dest-tags { display:flex; gap:6px; flex-wrap:wrap; }
     .dest-tag {
-      background: rgba(255,255,255,0.15);
-      border: 1px solid rgba(255,255,255,0.25);
-      color: rgba(255,255,255,0.9);
-      font-size: 0.72rem;
-      font-weight: 500;
-      padding: 3px 10px;
-      border-radius: 100px;
+      background:rgba(245,166,35,0.25); border:1px solid rgba(245,166,35,0.5);
+      color:var(--goldl); font-size:0.7rem; font-weight:600;
+      padding:3px 10px; border-radius:100px;
     }
+    .dest-cta {
+      display:block; text-align:center; margin-top:14px;
+      background:linear-gradient(135deg,var(--gold),#e8941a);
+      color:var(--navy); font-family:var(--fb); font-size:0.88rem; font-weight:700;
+      padding:11px; border-radius:10px; border:none; cursor:pointer; transition:all 0.2s;
+    }
+    .dest-cta:hover { transform:translateY(-2px); }
 
-    /* ── WHY US ── */
-    .why {
-      background: var(--ocean);
-      padding: 80px 24px;
-      position: relative;
-      overflow: hidden;
+    /* ── SEGMENTS ── */
+    .segments { background: var(--white); padding: 80px 24px; }
+    .seg-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; max-width:1000px; margin:0 auto; }
+    .seg-card {
+      border:1px solid var(--border); border-radius:16px; padding:28px 24px;
+      background:var(--off); transition:all 0.3s; position:relative; overflow:hidden;
     }
-    .why::before {
-      content: '';
-      position: absolute;
-      top: -50%; right: -20%;
-      width: 600px; height: 600px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(59,165,232,0.1) 0%, transparent 65%);
-      pointer-events: none;
+    .seg-card::before {
+      content:''; position:absolute; top:0; left:0; width:4px; height:100%;
+      background:linear-gradient(180deg,var(--gold),var(--sky));
+      border-radius:2px 0 0 2px; opacity:0; transition:opacity 0.3s;
     }
-    .why .sec-label { color: var(--gold-light); }
-    .why .sec-title { color: var(--white); }
+    .seg-card:hover { border-color:rgba(245,166,35,0.4); transform:translateY(-3px); box-shadow:0 12px 32px rgba(10,42,110,0.08); }
+    .seg-card:hover::before { opacity:1; }
+    .seg-icon { font-size:2rem; margin-bottom:12px; }
+    .seg-title { font-family:var(--fh); font-size:1.1rem; font-weight:700; color:var(--navy); margin-bottom:10px; }
+    .seg-hotels { font-size:0.82rem; color:var(--muted); line-height:1.7; }
+    .seg-hotels strong { color:var(--sky); font-weight:600; display:block; margin-bottom:4px; }
 
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .why-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 16px;
-      padding: 28px 20px;
-      text-align: center;
-      transition: all 0.3s;
-    }
-    .why-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-3px); }
-    .why-icon { font-size: 2rem; margin-bottom: 12px; }
-    .why-title {
-      font-family: var(--font-h);
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 6px;
-    }
-    .why-desc { font-size: 0.83rem; color: rgba(255,255,255,0.55); line-height: 1.5; }
+    /* ── WHY ── */
+    .why { background:var(--navy); padding:80px 24px; position:relative; overflow:hidden; }
+    .why::before { content:''; position:absolute; top:-40%; right:-15%; width:600px; height:600px; border-radius:50%; background:radial-gradient(circle,rgba(26,127,196,0.12) 0%,transparent 65%); pointer-events:none; }
+    .why .sec-label { color:var(--goldl); }
+    .why .sec-title { color:var(--white); }
+    .why-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; max-width:900px; margin:0 auto; }
+    .why-card { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:24px 18px; text-align:center; transition:all 0.3s; }
+    .why-card:hover { background:rgba(255,255,255,0.1); transform:translateY(-3px); }
+    .why-icon { font-size:1.8rem; margin-bottom:10px; }
+    .why-title { font-family:var(--fh); font-size:0.95rem; font-weight:700; color:var(--white); margin-bottom:6px; }
+    .why-desc { font-size:0.8rem; color:rgba(255,255,255,0.5); line-height:1.5; }
+
+    /* ── FLIGHTS ── */
+    .flights { background:var(--off); padding:80px 24px; }
+    .flight-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; max-width:900px; margin:0 auto; }
+    .flight-card { background:var(--white); border:1px solid var(--border); border-radius:16px; padding:24px; display:flex; gap:16px; align-items:flex-start; box-shadow:0 2px 8px rgba(10,42,110,0.05); transition:all 0.3s; }
+    .flight-card:hover { border-color:rgba(26,127,196,0.4); transform:translateY(-3px); }
+    .flight-icon { font-size:2rem; min-width:48px; }
+    .flight-dest { font-family:var(--fh); font-size:1rem; font-weight:700; color:var(--navy); margin-bottom:4px; }
+    .flight-info { font-size:0.82rem; color:var(--muted); line-height:1.6; }
+    .flight-airline { display:inline-flex; align-items:center; gap:4px; background:rgba(26,127,196,0.08); border:1px solid rgba(26,127,196,0.2); color:var(--ocean); font-size:0.72rem; font-weight:600; padding:2px 10px; border-radius:100px; margin-top:8px; }
 
     /* ── CTA ── */
-    .cta-section {
-      background: var(--off);
-      padding: 80px 24px;
-      text-align: center;
-    }
-    .cta-box {
-      max-width: 600px;
-      margin: 0 auto;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 48px 40px;
-      box-shadow: 0 8px 48px rgba(10,61,107,0.08);
-    }
-    .cta-box h2 {
-      font-family: var(--font-h);
-      font-size: clamp(1.5rem, 3vw, 2rem);
-      font-weight: 700;
-      color: var(--ocean);
-      margin-bottom: 10px;
-      letter-spacing: -0.5px;
-    }
-    .cta-box p { color: var(--muted); font-size: 0.92rem; margin-bottom: 28px; }
+    .cta-sec { background:var(--white); padding:80px 24px; text-align:center; }
+    .cta-box { max-width:580px; margin:0 auto; background:linear-gradient(135deg,rgba(10,42,110,0.04),rgba(26,127,196,0.06)); border:1px solid var(--border); border-radius:24px; padding:48px 40px; box-shadow:0 8px 48px rgba(10,42,110,0.06); }
+    .cta-box h2 { font-family:var(--fh); font-size:clamp(1.4rem,3vw,2rem); font-weight:700; color:var(--navy); margin-bottom:10px; letter-spacing:-0.5px; }
+    .cta-box p { color:var(--muted); font-size:0.9rem; margin-bottom:28px; line-height:1.6; }
+    .cta-gold { display:block; background:linear-gradient(135deg,var(--gold),#e8941a); color:var(--navy); font-family:var(--fb); font-size:1rem; font-weight:700; padding:16px; border-radius:10px; border:none; cursor:pointer; width:100%; box-shadow:0 4px 20px rgba(245,166,35,0.35); transition:all 0.2s; }
+    .cta-gold:hover { transform:translateY(-2px); box-shadow:0 8px 30px rgba(245,166,35,0.45); }
 
     /* ── FOOTER ── */
-    footer {
-      background: var(--ocean);
-      padding: 32px 48px 24px;
-    }
-    .footer-inner {
-      max-width: 900px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 20px;
-      padding-bottom: 24px;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    .footer-brand {
-      font-family: var(--font-h);
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--white);
-    }
-    .footer-brand span { color: var(--gold); }
-    .footer-phone {
-      font-family: var(--font-h);
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--white);
-      text-decoration: none;
-    }
-    .footer-socials { display: flex; gap: 8px; }
-    .soc { width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.2s; }
-    .soc svg { width: 18px; height: 18px; fill: #fff; }
-    .soc.tg { background: rgba(34,158,217,0.2); }
-    .soc.ig { background: rgba(225,48,108,0.2); }
-    .soc.yt { background: rgba(255,0,0,0.15); }
-    .soc.tg:hover { background: #229ED9; }
-    .soc.ig:hover { background: #e1306c; }
-    .soc.yt:hover { background: #ff0000; }
-    .footer-bottom { max-width: 900px; margin: 0 auto; padding-top: 18px; text-align: center; color: rgba(255,255,255,0.25); font-size: 0.74rem; }
+    footer { background:var(--navy); padding:40px 48px 0; }
+    .footer-inner { max-width:900px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px; padding-bottom:28px; border-bottom:1px solid rgba(255,255,255,0.08); }
+    .footer-brand { font-family:var(--fh); font-size:1.3rem; font-weight:700; color:var(--white); }
+    .footer-brand span { color:var(--gold); }
+    .footer-brand small { display:block; font-family:var(--fb); font-size:0.75rem; color:rgba(255,255,255,0.4); font-weight:400; margin-top:2px; }
+    .footer-right { text-align:right; }
+    .footer-phone { font-family:var(--fh); font-size:1.3rem; font-weight:700; color:var(--white); text-decoration:none; display:block; margin-bottom:12px; transition:color 0.2s; }
+    .footer-phone:hover { color:var(--goldl); }
+    .footer-socs { display:flex; gap:8px; justify-content:flex-end; }
+    .soc { width:38px; height:38px; border-radius:10px; display:flex; align-items:center; justify-content:center; text-decoration:none; transition:all 0.2s; }
+    .soc svg { width:18px; height:18px; fill:#fff; }
+    .soc.tg { background:rgba(34,158,217,0.2); } .soc.tg:hover { background:#229ED9; }
+    .soc.ig { background:rgba(225,48,108,0.2); } .soc.ig:hover { background:#e1306c; }
+    .soc.yt { background:rgba(255,0,0,0.15); }  .soc.yt:hover { background:#ff0000; }
+    .footer-bottom { max-width:900px; margin:0 auto; padding:18px 0; text-align:center; color:rgba(255,255,255,0.22); font-size:0.74rem; }
 
     /* ── MODAL ── */
-    .modal-overlay {
-      position: fixed; inset: 0;
-      background: rgba(10,37,64,0.88);
-      backdrop-filter: blur(6px);
-      z-index: 1000;
-      display: flex; align-items: center; justify-content: center;
-      padding: 20px;
-      opacity: 0; pointer-events: none;
-      transition: opacity 0.3s;
-    }
-    .modal-overlay.open { opacity: 1; pointer-events: all; }
+    .modal-overlay { position:fixed; inset:0; background:rgba(10,37,64,0.88); backdrop-filter:blur(6px); z-index:1000; display:flex; align-items:center; justify-content:center; padding:20px; opacity:0; pointer-events:none; transition:opacity 0.3s; }
+    .modal-overlay.open { opacity:1; pointer-events:all; }
+    .modal { background:var(--white); border-radius:20px; padding:40px 36px; width:100%; max-width:460px; position:relative; transform:scale(0.92) translateY(20px); transition:transform 0.3s; max-height:92vh; overflow-y:auto; box-shadow:0 24px 80px rgba(10,37,64,0.35); }
+    .modal-overlay.open .modal { transform:scale(1) translateY(0); }
+    .modal-close { position:absolute; top:16px; right:16px; background:var(--off); border:1px solid var(--border); color:var(--muted); width:32px; height:32px; border-radius:50%; cursor:pointer; font-size:1rem; display:flex; align-items:center; justify-content:center; transition:all 0.2s; }
+    .modal-close:hover { background:#e0edf8; }
+    .step { display:none; } .step.active { display:block; }
+    .sdots { display:flex; gap:6px; margin-bottom:24px; }
+    .sdot { height:4px; flex:1; border-radius:2px; background:var(--border); transition:background 0.3s; }
+    .sdot.done { background:var(--sky); }
+    .mtitle { font-family:var(--fh); font-size:1.2rem; font-weight:700; color:var(--navy); margin-bottom:8px; }
+    .msub { font-size:0.87rem; color:var(--muted); margin-bottom:22px; }
+    .cbtn { display:flex; align-items:center; gap:12px; width:100%; padding:13px 16px; border-radius:12px; border:1px solid var(--border); background:var(--off); color:var(--navy); font-family:var(--fb); font-size:0.88rem; font-weight:600; cursor:pointer; transition:all 0.2s; text-align:left; margin-bottom:9px; }
+    .cbtn:hover { border-color:var(--sky); background:#e8f4fd; }
+    .ci { font-size:1.2rem; min-width:28px; }
+    .fg { margin-bottom:14px; }
+    .fg label { display:block; font-size:0.72rem; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:0.8px; margin-bottom:7px; }
+    .fg input { width:100%; background:var(--off); border:1px solid var(--border); border-radius:10px; padding:12px 14px; color:var(--navy); font-family:var(--fb); font-size:0.93rem; outline:none; transition:border-color 0.2s,box-shadow 0.2s; }
+    .fg input::placeholder { color:#a0bcd4; }
+    .fg input:focus { border-color:var(--sky); box-shadow:0 0 0 3px rgba(26,127,196,0.1); }
+    .sbtn { width:100%; background:linear-gradient(135deg,var(--sky),var(--ocean)); color:#fff; font-family:var(--fb); font-size:0.97rem; font-weight:700; padding:14px; border-radius:10px; border:none; cursor:pointer; margin-top:6px; transition:all 0.2s; box-shadow:0 4px 20px rgba(14,83,152,0.3); }
+    .sbtn:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(14,83,152,0.4); }
+    .scenter { text-align:center; padding:16px 0; }
+    .bemoji { font-size:3rem; margin-bottom:14px; }
+    .scenter h3 { font-family:var(--fh); font-size:1.25rem; font-weight:700; color:var(--navy); margin-bottom:10px; }
+    .scenter p { color:var(--muted); font-size:0.87rem; margin-bottom:22px; line-height:1.6; }
+    .tgbtn { display:inline-flex; align-items:center; gap:10px; background:#229ED9; color:#fff; font-family:var(--fb); font-size:0.93rem; font-weight:700; padding:13px 28px; border-radius:10px; text-decoration:none; transition:all 0.2s; box-shadow:0 4px 16px rgba(34,158,217,0.35); }
+    .tgbtn:hover { transform:translateY(-2px); }
+    .tgbtn svg { width:19px; height:19px; fill:#fff; }
 
-    .modal {
-      background: var(--white);
-      border-radius: 20px;
-      padding: 40px 36px;
-      width: 100%; max-width: 460px;
-      position: relative;
-      transform: scale(0.92) translateY(20px);
-      transition: transform 0.3s;
-      max-height: 92vh; overflow-y: auto;
-      box-shadow: 0 24px 80px rgba(10,37,64,0.35);
-    }
-    .modal-overlay.open .modal { transform: scale(1) translateY(0); }
+    .reveal { opacity:0; transform:translateY(28px); transition:opacity 0.6s,transform 0.6s; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
 
-    .modal-close {
-      position: absolute; top: 16px; right: 16px;
-      background: var(--off); border: 1px solid var(--border);
-      color: var(--muted); width: 32px; height: 32px;
-      border-radius: 50%; cursor: pointer; font-size: 1rem;
-      display: flex; align-items: center; justify-content: center;
-      transition: all 0.2s;
-    }
-    .modal-close:hover { background: #e0edf8; }
-
-    .step { display: none; }
-    .step.active { display: block; }
-
-    .step-dots { display: flex; gap: 6px; margin-bottom: 24px; }
-    .sdot { height: 4px; flex: 1; border-radius: 2px; background: var(--border); transition: background 0.3s; }
-    .sdot.done { background: var(--sky); }
-
-    .modal-title {
-      font-family: var(--font-h);
-      font-size: 1.25rem; font-weight: 700;
-      color: var(--ocean); margin-bottom: 8px;
-    }
-    .modal-sub { font-size: 0.87rem; color: var(--muted); margin-bottom: 24px; }
-
-    .choice-btn {
-      display: flex; align-items: center; gap: 12px;
-      width: 100%; padding: 14px 18px;
-      border-radius: 12px; border: 1px solid var(--border);
-      background: var(--off); color: var(--ocean);
-      font-family: var(--font-b); font-size: 0.9rem; font-weight: 600;
-      cursor: pointer; transition: all 0.2s; text-align: left;
-      margin-bottom: 10px;
-    }
-    .choice-btn:hover { border-color: var(--sky); background: #e8f4fd; }
-    .choice-icon { font-size: 1.3rem; }
-
-    .form-group { margin-bottom: 16px; }
-    .form-group label {
-      display: block; font-size: 0.73rem; font-weight: 700;
-      color: var(--muted); text-transform: uppercase;
-      letter-spacing: 0.8px; margin-bottom: 8px;
-    }
-    .form-group input {
-      width: 100%; background: var(--off);
-      border: 1px solid var(--border); border-radius: 10px;
-      padding: 13px 16px; color: var(--ocean);
-      font-family: var(--font-b); font-size: 0.95rem; outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    .form-group input::placeholder { color: #a0bcd4; }
-    .form-group input:focus { border-color: var(--sky); box-shadow: 0 0 0 3px rgba(26,127,196,0.12); }
-
-    .submit-btn {
-      width: 100%;
-      background: linear-gradient(135deg, var(--sky), var(--ocean-mid));
-      color: #fff; font-family: var(--font-b); font-size: 1rem;
-      font-weight: 700; padding: 15px; border-radius: 10px;
-      border: none; cursor: pointer; margin-top: 8px;
-      transition: all 0.2s; box-shadow: 0 4px 20px rgba(14,83,152,0.3);
-    }
-    .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(14,83,152,0.4); }
-
-    .screen-center { text-align: center; padding: 16px 0; }
-    .big-emoji { font-size: 3rem; margin-bottom: 16px; }
-    .screen-center h3 { font-family: var(--font-h); font-size: 1.3rem; font-weight: 700; color: var(--ocean); margin-bottom: 10px; }
-    .screen-center p { color: var(--muted); font-size: 0.88rem; margin-bottom: 24px; line-height: 1.6; }
-
-    .tg-btn {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: #229ED9; color: #fff;
-      font-family: var(--font-b); font-size: 0.95rem; font-weight: 700;
-      padding: 14px 32px; border-radius: 10px; text-decoration: none;
-      transition: all 0.2s; box-shadow: 0 4px 16px rgba(34,158,217,0.35);
-    }
-    .tg-btn:hover { transform: translateY(-2px); }
-    .tg-btn svg { width: 20px; height: 20px; fill: #fff; }
-
-    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s, transform 0.6s; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-
-    @media(max-width: 600px) {
-      .hero h1 { font-size: 2.2rem; }
-      .cta-box { padding: 32px 20px; }
-      .modal { padding: 28px 18px; }
-      footer { padding: 28px 20px 0; }
-      .footer-inner { flex-direction: column; align-items: flex-start; }
+    @media(max-width:600px) {
+      .hero h1 { font-size:2rem; }
+      .stats-inner { grid-template-columns:repeat(2,1fr); }
+      .cta-box { padding:28px 18px; }
+      .modal { padding:28px 16px; }
+      footer { padding:28px 20px 0; }
+      .footer-inner { flex-direction:column; align-items:flex-start; }
+      .footer-right { text-align:left; }
+      .footer-socs { justify-content:flex-start; }
     }
   </style>
 </head>
@@ -433,11 +268,27 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-badge">✈️ Misр & Turkiya</div>
-  <h1>Dengiz, quyosh va <em>xotiralar</em> — biz bilan</h1>
-  <p>Oilaviy dam olish, romantik sayohat yoki do'stlar bilan — eng yaxshi turlarni siz uchun tanlaymiz. Bepul maslahat oling.</p>
-  <button class="hero-btn" onclick="openModal()">🌴 Bepul maslahat olish</button>
+  <div class="hero-badge">✈️ Misr & Turkiya — Premium Turlar</div>
+  <h1>Dam olishni <em>to'g'ri</em> tanlang</h1>
+  <p class="hero-sub">All inclusive Sharm el-Sheikh yoki premiumroq Egey sohillari — siz uchun eng mos variant topiladi.</p>
+  <div class="hero-tags">
+    <span class="hero-tag">🏖️ 5 yulduzli otellar</span>
+    <span class="hero-tag">✅ Vizasiz (Misr 14 kun)</span>
+    <span class="hero-tag">✈️ To'g'ridan to'g'ri reyslar</span>
+    <span class="hero-tag">👨‍👩‍👧 Oilaviy dam olish</span>
+  </div>
+  <button class="hero-btn" onclick="openModal()">🌴 Bepul maslahat olish →</button>
 </section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-inner">
+    <div><div class="stat-num">2</div><div class="stat-lbl">Premium yo'nalish</div></div>
+    <div><div class="stat-num">5★</div><div class="stat-lbl">Faqat 5 yulduzli otellar</div></div>
+    <div><div class="stat-num">7-10</div><div class="stat-lbl">Kun — optimal muddat</div></div>
+    <div><div class="stat-num">0</div><div class="stat-lbl">Viza (Misr 14 kun)</div></div>
+  </div>
+</div>
 
 <!-- DESTINATIONS -->
 <section class="destinations">
@@ -445,73 +296,158 @@
   <h2 class="sec-title">Qayerga <span>bormoqchisiz?</span></h2>
   <div class="dest-grid">
 
-    <div class="dest-card reveal" onclick="openModal()">
-      <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80" alt="Misr" loading="lazy"/>
+    <!-- MISR -->
+    <div class="dest-card reveal" onclick="openModal('Misr — Sharm el-Sheikh')">
+      <img src="1.jpg" alt="Misr Sharm el-Sheikh"/>
       <div class="dest-overlay">
         <div class="dest-flag">🇪🇬</div>
-        <div class="dest-name">Misr — Sharm el-Shayx</div>
+        <div class="dest-name">Misr — Sharm el-Sheikh</div>
+        <ul class="dest-list">
+          <li>All inclusive konsepsiya</li>
+          <li>Qizil dengiz — suv osti dunyosi</li>
+          <li>Bolalar uchun akvapark va animatsiya</li>
+          <li>Vizasiz 14 kungacha, to'g'ridan to'g'ri reys</li>
+          <li>Musulmon davlat — qulay muhit</li>
+        </ul>
         <div class="dest-tags">
           <span class="dest-tag">All Inclusive</span>
-          <span class="dest-tag">Qizil dengiz</span>
           <span class="dest-tag">Oilaviy</span>
-          <span class="dest-tag">Vizasiz 14 kun</span>
+          <span class="dest-tag">6.5 soat reys</span>
         </div>
+        <button class="dest-cta">Maslahat olish →</button>
       </div>
     </div>
 
-    <div class="dest-card reveal" style="transition-delay:0.1s" onclick="openModal()">
-      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Turkiya" loading="lazy"/>
+    <!-- TURKIYA -->
+    <div class="dest-card reveal" style="transition-delay:0.1s" onclick="openModal('Turkiya — Egey sohillari')">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Turkiya Egey"/>
       <div class="dest-overlay">
         <div class="dest-flag">🇹🇷</div>
         <div class="dest-name">Turkiya — Egey sohillari</div>
+        <ul class="dest-list">
+          <li>Antaliyadan boshqacha — yangi taassurot</li>
+          <li>Yevropacha muhit va chiroyli manzaralar</li>
+          <li>Bodrum, Kushadasi, Marmaris, Fethiye</li>
+          <li>Premium otellar, sifatli dam olish</li>
+          <li>O'zbeklar kamroq bo'lgan muhit</li>
+        </ul>
         <div class="dest-tags">
-          <span class="dest-tag">Kushadasi</span>
-          <span class="dest-tag">Bodrum</span>
-          <span class="dest-tag">Marmaris</span>
           <span class="dest-tag">Premium</span>
+          <span class="dest-tag">Yevropacha</span>
+          <span class="dest-tag">Yangi tajriba</span>
         </div>
+        <button class="dest-cta">Maslahat olish →</button>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- WHY US -->
+<!-- SEGMENTS -->
+<section class="segments">
+  <div class="sec-label">Otel tanlash</div>
+  <h2 class="sec-title">Kimlar <span>uchun?</span></h2>
+  <div class="seg-grid">
+
+    <div class="seg-card reveal">
+      <div class="seg-icon">👨‍👩‍👧</div>
+      <div class="seg-title">Oilaviy dam olish (Misr)</div>
+      <div class="seg-hotels">
+        <strong>Tavsiya etiladigan otellar:</strong>
+        Sunrise Montemare · Rixos Radamis · Rixos Seagate · Swissotel · Jaz Mirabel · Albatros Palace · Royal Moderna
+        <br><br>Katta hudud, akvapark, bolalar uchun sharoit va oilaviy konsepsiya.
+      </div>
+    </div>
+
+    <div class="seg-card reveal" style="transition-delay:0.08s">
+      <div class="seg-icon">💑</div>
+      <div class="seg-title">Yoshlar va juftliklar (Misr)</div>
+      <div class="seg-hotels">
+        <strong>Tavsiya etiladigan otellar:</strong>
+        Rixos · Rixos Adults (18+) · Albatros Royal Grand · Baron Palms
+        <br><br>Faol muhit, kechki dasturlar, klub va animatsiya.
+      </div>
+    </div>
+
+    <div class="seg-card reveal" style="transition-delay:0.12s">
+      <div class="seg-icon">🌊</div>
+      <div class="seg-title">Egey sohillari — Oila & Juftlik</div>
+      <div class="seg-hotels">
+        <strong>Hududlar:</strong>
+        Kuşadası · Bodrum · Marmaris · Fethiye · Dalaman
+        <br><br>Antaliyadan charchagan, premiumroq dam olish xohlovchilar uchun. Yevropacha muhit.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY -->
 <section class="why">
   <div class="sec-label">Nima uchun biz?</div>
-  <h2 class="sec-title" style="color:#fff">Bizning <span>afzalliklarimiz</span></h2>
+  <h2 class="sec-title" style="color:var(--white)">Bizning <span>afzalliklarimiz</span></h2>
   <div class="why-grid">
     <div class="why-card reveal">
       <div class="why-icon">✈️</div>
-      <div class="why-title">To'g'ridan to'g'ri reyslар</div>
-      <div class="why-desc">Misrga deyarli har kuni, Turkiyaga bir necha yo'nalish</div>
+      <div class="why-title">To'g'ridan to'g'ri reyslar</div>
+      <div class="why-desc">Misrga deyarli har kuni, Turkiyaga Fly Khiva va Uzbekistan Airways</div>
     </div>
-    <div class="why-card reveal" style="transition-delay:0.1s">
-      <div class="why-icon">🏨</div>
-      <div class="why-title">5 yulduzli mehmonxonalar</div>
-      <div class="why-desc">Dengizga yaqin, qulay va sifatli dam olish uchun</div>
+    <div class="why-card reveal" style="transition-delay:0.08s">
+      <div class="why-icon">⭐</div>
+      <div class="why-title">Faqat 5 yulduzli</div>
+      <div class="why-desc">Dengizga yaqin, qulay. 4 yulduzni tavsiya qilmaymiz — ikkinchi liniyada bo'ladi</div>
     </div>
-    <div class="why-card reveal" style="transition-delay:0.15s">
-      <div class="why-icon">👨‍👩‍👧</div>
-      <div class="why-title">Oilaviy dam olish</div>
-      <div class="why-desc">Bolalar uchun akvaparklar, animatsiya va havzalar</div>
+    <div class="why-card reveal" style="transition-delay:0.12s">
+      <div class="why-icon">🕌</div>
+      <div class="why-title">Qulay muhit</div>
+      <div class="why-desc">Misr — musulmon davlat. Egey — o'zbeklar kamroq, premiumroq atmosfera</div>
     </div>
-    <div class="why-card reveal" style="transition-delay:0.2s">
+    <div class="why-card reveal" style="transition-delay:0.16s">
       <div class="why-icon">💬</div>
       <div class="why-title">Bepul maslahat</div>
-      <div class="why-desc">Mutaxassisimiz siz uchun eng mos turni tanlab beradi</div>
+      <div class="why-desc">Mutaxassisimiz siz uchun eng mos otel va turni tanlaydi</div>
+    </div>
+  </div>
+</section>
+
+<!-- FLIGHTS -->
+<section class="flights">
+  <div class="sec-label">Reyslar</div>
+  <h2 class="sec-title">Qaysi <span>aviakompaniyalar?</span></h2>
+  <div class="flight-grid">
+    <div class="flight-card reveal">
+      <div class="flight-icon">🇪🇬</div>
+      <div>
+        <div class="flight-dest">Sharm el-Sheikh</div>
+        <div class="flight-info">Deyarli har kuni reyslar bor. Turli aviakompaniyalar, narxlar nisbatan qulay. Uchish vaqti 6–6.5 soat.</div>
+        <span class="flight-airline">✈️ To'g'ridan to'g'ri reys</span>
+      </div>
+    </div>
+    <div class="flight-card reveal" style="transition-delay:0.08s">
+      <div class="flight-icon">🏙️</div>
+      <div>
+        <div class="flight-dest">Kuşadası / Izmir</div>
+        <div class="flight-info">Egey sohiliga eng qulay kirish. To'g'ridan to'g'ri reyslar mavjud.</div>
+        <span class="flight-airline">✈️ Fly Khiva</span>
+      </div>
+    </div>
+    <div class="flight-card reveal" style="transition-delay:0.12s">
+      <div class="flight-icon">🏖️</div>
+      <div>
+        <div class="flight-dest">Bodrum / Marmaris</div>
+        <div class="flight-info">Premium Egey yo'nalishlari. Uzbekistan Airways reyslar bilan qulay.</div>
+        <span class="flight-airline">✈️ Uzbekistan Airways</span>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="cta-section">
+<section class="cta-sec">
   <div class="cta-box reveal">
-    <h2>Sayohatingizni rejalashtiring</h2>
-    <p>Qo'ng'iroq qilib yoki forma to'ldirib, bepul maslahat oling. Biz eng qulay narxni topib beramiz.</p>
-    <button class="submit-btn" style="background:linear-gradient(135deg,var(--gold),#e8941a);color:var(--ocean);" onclick="openModal()">
-      🌴 Hoziroq maslahat olish →
-    </button>
+    <h2>Sayohatingizni hozir rejalashtiring</h2>
+    <p>Qayerga borish yaxshiroq? Qaysi otelni tanlash kerak? Mutaxassisimiz bepul maslahat beradi va eng qulay narxni topib beradi.</p>
+    <button class="cta-gold" onclick="openModal()">🌴 Bepul maslahat olish →</button>
   </div>
 </section>
 
@@ -519,100 +455,79 @@
 <footer>
   <div class="footer-inner">
     <div>
-      <div class="footer-brand">Sayohat<span>.</span></div>
-      <div style="color:rgba(255,255,255,0.4);font-size:0.78rem;margin-top:4px">Misр va Turkiya turlari</div>
+      <div class="footer-brand">Pay<span>Fly</span><small>Misr & Turkiya premium turlari</small></div>
     </div>
-    <div>
-      <a class="footer-phone" href="tel:+998XXXXXXXXX">+998 XX XXX XX XX</a>
-      <div class="footer-socials" style="margin-top:12px;justify-content:flex-end">
-        <a class="soc tg" href="#" target="_blank" title="Telegram">
+    <div class="footer-right">
+      <a class="footer-phone" href="tel:+998883050033">88 305 00 33</a>
+      <div class="footer-socs">
+        <a class="soc tg" href="https://t.me/payfly_uzb" target="_blank">
           <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.02 9.52c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.04 14.6l-2.95-.924c-.641-.204-.654-.641.136-.953l11.527-4.445c.535-.194 1.003.131.81.97z"/></svg>
         </a>
-        <a class="soc ig" href="#" target="_blank" title="Instagram">
+        <a class="soc ig" href="https://www.instagram.com/payfly_uz/" target="_blank">
           <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
         </a>
-        <a class="soc yt" href="#" target="_blank" title="YouTube">
+        <a class="soc yt" href="https://www.youtube.com/@payfly_uz" target="_blank">
           <svg viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
         </a>
       </div>
     </div>
   </div>
-  <div class="footer-bottom">© 2026 Sayohat — Barcha huquqlar himoyalangan</div>
+  <div class="footer-bottom">© 2026 PayFly — Barcha huquqlar himoyalangan</div>
 </footer>
 
 <!-- MODAL -->
-<div class="modal-overlay" id="modalOverlay" onclick="handleOverlay(event)">
+<div class="modal-overlay" id="modalOverlay" onclick="handleOv(event)">
   <div class="modal">
     <button class="modal-close" onclick="closeModal()">✕</button>
-    <div class="step-dots" id="stepDots">
+    <div class="sdots" id="sdots">
       <div class="sdot" id="sd1"></div>
       <div class="sdot" id="sd2"></div>
       <div class="sdot" id="sd3"></div>
       <div class="sdot" id="sd4"></div>
     </div>
 
-    <!-- STEP 1: Yo'nalish -->
+    <!-- 1: Yo'nalish -->
     <div class="step active" id="step1">
-      <div class="modal-title">✈️ Qayerga bormoqchisiz?</div>
-      <div class="modal-sub">Yo'nalishni tanlang — maslahatchi tavsiya tayyorlaydi.</div>
-      <button class="choice-btn" onclick="setDest('Misr — Sharm el-Shayx');goStep(2)">
-        <span class="choice-icon">🇪🇬</span> Misr — Sharm el-Shayx
-      </button>
-      <button class="choice-btn" onclick="setDest('Turkiya — Egey sohillari');goStep(2)">
-        <span class="choice-icon">🇹🇷</span> Turkiya — Egey sohillari
-      </button>
-      <button class="choice-btn" onclick="setDest('Hali aniqlamadim');goStep(2)">
-        <span class="choice-icon">🤔</span> Hali aniqlamadim
-      </button>
+      <div class="mtitle">✈️ Qayerga bormoqchisiz?</div>
+      <div class="msub">Yo'nalishni tanlang — maslahatchi tavsiya tayyorlaydi.</div>
+      <button class="cbtn" onclick="setD('Misr — Sharm el-Sheikh');gs(2)"><span class="ci">🇪🇬</span>Misr — Sharm el-Sheikh</button>
+      <button class="cbtn" onclick="setD('Turkiya — Egey sohillari');gs(2)"><span class="ci">🇹🇷</span>Turkiya — Egey sohillari</button>
+      <button class="cbtn" onclick="setD('Hali aniqlamadim');gs(2)"><span class="ci">🤔</span>Hali aniqlamadim — maslahat kerak</button>
     </div>
 
-    <!-- STEP 2: Kim bilan -->
+    <!-- 2: Segment -->
     <div class="step" id="step2">
-      <div class="modal-title">👨‍👩‍👧 Kim bilan borasiz?</div>
-      <div class="modal-sub">Eng mos mehmonxona va turni tavsiya qilishimiz uchun.</div>
-      <button class="choice-btn" onclick="setGroup('Oila bilan (bolalar bor)');goStep(3)">
-        <span class="choice-icon">👨‍👩‍👧</span> Oila bilan (bolalar bor)
-      </button>
-      <button class="choice-btn" onclick="setGroup('Juftlik bilan');goStep(3)">
-        <span class="choice-icon">💑</span> Juftlik bilan
-      </button>
-      <button class="choice-btn" onclick="setGroup('Do\'stlar bilan');goStep(3)">
-        <span class="choice-icon">👫</span> Do'stlar bilan
-      </button>
-      <button class="choice-btn" onclick="setGroup('Yolg\'iz');goStep(3)">
-        <span class="choice-icon">🧳</span> Yolg'iz
-      </button>
+      <div class="mtitle">👨‍👩‍👧 Kim bilan borasiz?</div>
+      <div class="msub">Eng mos otelni tavsiya qilishimiz uchun.</div>
+      <button class="cbtn" onclick="setG('Oila bilan (bolalar bor)');gs(3)"><span class="ci">👨‍👩‍👧</span>Oila bilan (bolalar bor)</button>
+      <button class="cbtn" onclick="setG('Juftlik bilan');gs(3)"><span class="ci">💑</span>Juftlik bilan</button>
+      <button class="cbtn" onclick="setG('Do\'stlar bilan');gs(3)"><span class="ci">👫</span>Do'stlar bilan</button>
+      <button class="cbtn" onclick="setG('Yolg\'iz');gs(3)"><span class="ci">🧳</span>Yolg'iz</button>
     </div>
 
-    <!-- STEP 3: Ism -->
+    <!-- 3: Ism -->
     <div class="step" id="step3">
-      <div class="modal-title">👤 Ismingizni yozing</div>
-      <div class="modal-sub">Siz bilan muloqot qilishimiz uchun kerak.</div>
-      <div class="form-group">
-        <label>Ism</label>
-        <input type="text" id="inp-name" placeholder="Masalan: Dilnoza"/>
-      </div>
-      <button class="submit-btn" onclick="nextStep(3)">Keyingisi →</button>
+      <div class="mtitle">👤 Ismingizni yozing</div>
+      <div class="msub">Siz bilan muloqot qilishimiz uchun kerak.</div>
+      <div class="fg"><label>Ism</label><input type="text" id="inp-name" placeholder="Masalan: Dilnoza"/></div>
+      <button class="sbtn" onclick="nx(3)">Keyingisi →</button>
     </div>
 
-    <!-- STEP 4: Telefon -->
+    <!-- 4: Telefon -->
     <div class="step" id="step4">
-      <div class="modal-title">📱 Telefon raqamingiz</div>
-      <div class="modal-sub">Maslahatchi siz bilan bog'lanadi.</div>
-      <div class="form-group">
-        <label>Telefon raqam</label>
-        <input type="tel" id="inp-phone" placeholder="+998 90 123 45 67"/>
-      </div>
-      <button class="submit-btn" onclick="submitForm()">✅ Maslahat olish</button>
+      <div class="mtitle">📱 Telefon raqamingiz</div>
+      <div class="msub">Maslahatchi siz bilan bog'lanadi.</div>
+      <div class="fg"><label>Telefon raqam</label><input type="tel" id="inp-phone" placeholder="+998 90 123 45 67"/></div>
+      <button class="sbtn" onclick="submit()">✅ Maslahat olish</button>
     </div>
 
     <!-- SUCCESS -->
-    <div class="step" id="stepSuccess">
-      <div class="screen-center">
-        <div class="big-emoji">🎉</div>
+    <div class="step" id="stepOk">
+      <div class="scenter">
+        <div class="bemoji">🎉</div>
         <h3>Arizangiz qabul qilindi!</h3>
         <p>Tez orada siz bilan bog'lanamiz.<br>Savollaringiz bo'lsa, pastdagi knopkani bosib Telegramdan yozing 👇</p>
-        <a href="#" target="_blank" class="tg-btn" id="tgLink">
+        <a href="https://t.me/payfly_uzb" target="_blank" class="tgbtn">
           <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.02 9.52c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.04 14.6l-2.95-.924c-.641-.204-.654-.641.136-.953l11.527-4.445c.535-.194 1.003.131.81.97z"/></svg>
           Telegramdan yozish
         </a>
@@ -622,76 +537,54 @@
 </div>
 
 <script>
-  let formData = { dest: '', group: '', name: '', phone: '' };
+  let fd = { dest:'', group:'', name:'', phone:'' };
 
-  function openModal() {
+  function openModal(dest) {
     document.getElementById('modalOverlay').classList.add('open');
     document.body.style.overflow = 'hidden';
-    showStep(1); updateDots(0);
+    if (dest) { fd.dest = dest; showStep(2); updateDots(1); }
+    else { showStep(1); updateDots(0); }
   }
   function closeModal() {
     document.getElementById('modalOverlay').classList.remove('open');
     document.body.style.overflow = '';
   }
-  function handleOverlay(e) {
-    if (e.target === document.getElementById('modalOverlay')) closeModal();
-  }
+  function handleOv(e) { if (e.target === document.getElementById('modalOverlay')) closeModal(); }
   function showStep(id) {
     document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
-    document.getElementById(typeof id === 'number' ? 'step'+id : id).classList.add('active');
+    document.getElementById(typeof id==='number'?'step'+id:id).classList.add('active');
   }
   function updateDots(n) {
-    const wrap = document.getElementById('stepDots');
-    if (typeof n !== 'number') { wrap.style.display='none'; return; }
-    wrap.style.display = 'flex';
-    for (let i=1;i<=4;i++) document.getElementById('sd'+i)?.classList.toggle('done', i<=n);
+    const w = document.getElementById('sdots');
+    if (typeof n!=='number'){w.style.display='none';return;}
+    w.style.display='flex';
+    for(let i=1;i<=4;i++) document.getElementById('sd'+i)?.classList.toggle('done',i<=n);
   }
-  function goStep(n) { showStep(n); updateDots(n-1); }
-  function setDest(v) { formData.dest = v; }
-  function setGroup(v) { formData.group = v; }
-
-  function nextStep(s) {
-    const v = { 3:{id:'inp-name',msg:'Iltimos, ismingizni kiriting.'} }[s];
-    if (v && !document.getElementById(v.id).value.trim()) { alert(v.msg); return; }
-    if (s === 3) formData.name = document.getElementById('inp-name').value.trim();
-    goStep(s+1);
+  function gs(n) { showStep(n); updateDots(n-1); }
+  function setD(v) { fd.dest = v; }
+  function setG(v) { fd.group = v; }
+  function nx(s) {
+    if (s===3) { const v=document.getElementById('inp-name').value.trim(); if(!v){alert('Iltimos, ismingizni kiriting.');return;} fd.name=v; }
+    gs(s+1);
   }
-
-  async function submitForm() {
-    const phone = document.getElementById('inp-phone').value.trim();
-    if (!phone) { alert('Iltimos, telefon raqamingizni kiriting.'); return; }
-    formData.phone = phone;
-
-    showStep('stepSuccess');
-    updateDots('done');
-
-    // Meta Pixel Lead event
-    const eventId = 'lead_' + Date.now() + '_' + Math.random().toString(36).slice(2);
-    if (typeof fbq !== 'undefined') {
-      fbq('track', 'Lead', {
-        content_name: 'Sayohat maslahat',
-        content_category: formData.dest,
-        value: 0, currency: 'UZS'
-      }, { eventID: eventId });
+  async function submit() {
+    const ph = document.getElementById('inp-phone').value.trim();
+    if(!ph){alert('Iltimos, telefon raqamingizni kiriting.');return;}
+    fd.phone = ph;
+    showStep('stepOk'); updateDots('done');
+    const eid = 'lead_'+Date.now()+'_'+Math.random().toString(36).slice(2);
+    if(typeof fbq!=='undefined'){
+      fbq('track','Lead',{content_name:'PayFly maslahat',content_category:fd.dest,value:0,currency:'UZS'},{eventID:eid});
     }
-
-    // CAPI
     try {
-      await fetch('/api/lead', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...formData, eventId, userAgent: navigator.userAgent, sourceUrl: window.location.href })
-      });
-    } catch(e) { console.warn('CAPI:', e); }
-
-    console.log('Lead:', formData);
+      await fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({...fd,eventId:eid,userAgent:navigator.userAgent,sourceUrl:window.location.href})});
+    } catch(e){console.warn('CAPI:',e);}
+    console.log('Lead:',fd);
   }
 
-  // Scroll reveal
   document.querySelectorAll('.reveal').forEach(el =>
-    new IntersectionObserver((en,ob) => {
-      en.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');ob.unobserve(e.target);} });
-    }, {threshold:0.1}).observe(el)
+    new IntersectionObserver((en,ob)=>{en.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ob.unobserve(e.target);}});},{threshold:0.1}).observe(el)
   );
 </script>
 </body>
