@@ -268,12 +268,12 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-badge">✈️ Misr va Turkiya — Premium Tur Paketlar</div>
+  <div class="hero-badge" style="background:rgba(245,166,35,0.25);border:1px solid rgba(245,166,35,0.6);font-size:0.85rem;padding:8px 22px;letter-spacing:0.5px;">📍 TOSHKENT SHAHAR</div>
   <h1>Antaliyadan zerikganlar uchun<br><em>premium tur paket</em></h1>
   <p class="hero-sub">Misr yoki Turkiya — tajribali sayohatchilar uchun eng yaxshi otellar va tur paketlar.</p>
   <div class="hero-tags">
     <span class="hero-tag">🏖️ 5 yulduzli otellar</span>
-    <span class="hero-tag">✅ Vizasiz (Misr 14 kun)</span>
+    <span class="hero-tag">✅ Vizasiz sayohat</span>
     <span class="hero-tag">✈️ To'g'ridan to'g'ri reyslar</span>
     <span class="hero-tag">👨‍👩‍👧 Oilaviy dam olish</span>
   </div>
@@ -286,7 +286,7 @@
     <div><div class="stat-num">2</div><div class="stat-lbl">Premium yo'nalish</div></div>
     <div><div class="stat-num">5★</div><div class="stat-lbl">Faqat 5 yulduzli otellar</div></div>
     <div><div class="stat-num">7-10</div><div class="stat-lbl">Kun — optimal muddat</div></div>
-    <div><div class="stat-num">0</div><div class="stat-lbl">Viza (Misr 14 kun)</div></div>
+    <div><div class="stat-num">✓</div><div class="stat-lbl">Vizasiz sayohat</div></div>
   </div>
 </div>
 
@@ -306,7 +306,7 @@
           <li>All inclusive konsepsiya</li>
           <li>Qizil dengiz — suv osti dunyosi</li>
           <li>Bolalar uchun akvapark va animatsiya</li>
-          <li>Vizasiz 14 kungacha, to'g'ridan to'g'ri reys</li>
+          <li>Vizasiz sayohat (14 kungacha)</li>
           <li>Musulmon davlat — qulay muhit</li>
         </ul>
         <div class="dest-tags">
@@ -371,7 +371,7 @@
 
     <div class="seg-card reveal" style="transition-delay:0.12s">
       <div class="seg-icon">🌊</div>
-      <div class="seg-title">Egey sohillari — Oila & Juftlik</div>
+      <div class="seg-title">Egey sohillari — Oila va Juftlik</div>
       <div class="seg-hotels">
         <strong>Hududlar:</strong>
         Kuşadası · Bodrum · Marmaris · Fethiye · Dalaman
@@ -390,12 +390,12 @@
     <div class="why-card reveal">
       <div class="why-icon">⭐</div>
       <div class="why-title">7 yillik tajriba</div>
-      <div class="why-desc">Misr va Turkiya yo'nalishlarida 7 yildan ortiq ixtisoslashgan tajribamiz</div>
+      <div class="why-desc">Sayohat yo'nalishida 7 yildan ortiq tajribaga egamiz</div>
     </div>
     <div class="why-card reveal" style="transition-delay:0.08s">
       <div class="why-icon">🏅</div>
       <div class="why-title">5000+ mamnun sayohatchi</div>
-      <div class="why-desc">5000 dan ortiq sayohatchi ishonchi — bizning eng katta yutuqimiz</div>
+      <div class="why-desc">5000 dan ortiq sayohatchi ishonchi — bizning eng katta yutug'imiz</div>
     </div>
     <div class="why-card reveal" style="transition-delay:0.12s">
       <div class="why-icon">🕌</div>
@@ -489,53 +489,104 @@
       <div class="sdot" id="sd7"></div>
     </div>
 
-    <!-- 1: Yo'nalish -->
+    <!-- STEP 1: Yo'nalish -->
     <div class="step active" id="step1">
       <div class="mtitle">✈️ Qayerga bormoqchisiz?</div>
-      <div class="msub">Yo'nalishni tanlang — maslahatchi tavsiya tayyorlaydi.</div>
+      <div class="msub">Yo'nalishni tanlang — joyingizni bron qilamiz.</div>
       <button class="cbtn" onclick="setD('Misr — Sharm el-Sheikh');gs(2)"><span class="ci">🇪🇬</span>Misr — Sharm el-Sheikh</button>
       <button class="cbtn" onclick="setD('Turkiya — Egey sohillari');gs(2)"><span class="ci">🇹🇷</span>Turkiya — Egey sohillari</button>
-      <button class="cbtn" onclick="setD('Hali aniqlamadim');gs(2)"><span class="ci">🤔</span>Hali aniqlamadim — maslahat kerak</button>
     </div>
 
-    <!-- 2: Segment -->
+    <!-- STEP 2: Yashash joyi -->
     <div class="step" id="step2">
-      <div class="mtitle">👨‍👩‍👧 Kim bilan borasiz?</div>
-      <div class="msub">Eng mos otelni tavsiya qilishimiz uchun.</div>
-      <button class="cbtn" onclick="setG('Oila bilan (bolalar bor)');gs(3)"><span class="ci">👨‍👩‍👧</span>Oila bilan (bolalar bor)</button>
-      <button class="cbtn" onclick="setG('Juftlik bilan');gs(3)"><span class="ci">💑</span>Juftlik bilan</button>
-      <button class="cbtn" onclick="setG('Do\'stlar bilan');gs(3)"><span class="ci">👫</span>Do'stlar bilan</button>
-      <button class="cbtn" onclick="setG('Yolg\'iz');gs(3)"><span class="ci">🧳</span>Yolg'iz</button>
+      <div class="mtitle">📍 Qayerda yashaysiz?</div>
+      <div class="msub">Xizmat hududimizni aniqlaymiz.</div>
+      <button class="cbtn" onclick="setCity('Toshkent shahar');gs(3)"><span class="ci">🏙️</span>Toshkent shahar</button>
+      <button class="cbtn" onclick="gs('noCity')"><span class="ci">🗺️</span>Viloyat</button>
     </div>
 
-    <!-- 3: Ism -->
+    <!-- STEP 3: Kim bilan -->
     <div class="step" id="step3">
+      <div class="mtitle">👨‍👩‍👧 Kim bilan borasiz?</div>
+      <div class="msub">Eng mos tur paketni tavsiya qilishimiz uchun.</div>
+      <button class="cbtn" onclick="setG('Oilam bilan (bolalar bor)');gs(4)"><span class="ci">👨‍👩‍👧</span>Oilam bilan (bolalar bor)</button>
+      <button class="cbtn" onclick="setG('Turmush o\'rtog\'im bilan');gs(4)"><span class="ci">💑</span>Turmush o'rtog'im bilan</button>
+      <button class="cbtn" onclick="setG('Do\'stlarim bilan');gs(4)"><span class="ci">👫</span>Do'stlarim bilan</button>
+      <button class="cbtn" onclick="setG('Bir o\'zim boraman');gs(4)"><span class="ci">🧳</span>Bir o'zim boraman</button>
+    </div>
+
+    <!-- STEP 4: Ism -->
+    <div class="step" id="step4">
       <div class="mtitle">👤 Ismingizni yozing</div>
       <div class="msub">Siz bilan muloqot qilishimiz uchun kerak.</div>
       <div class="fg"><label>Ism</label><input type="text" id="inp-name" placeholder="Masalan: Dilnoza"/></div>
-      <button class="sbtn" onclick="nx(3)">Keyingisi →</button>
+      <button class="sbtn" onclick="nx(4)">Keyingisi →</button>
     </div>
 
-    <!-- 4: Telefon -->
-    <div class="step" id="step4">
+    <!-- STEP 5: Telefon -->
+    <div class="step" id="step5">
       <div class="mtitle">📱 Telefon raqamingiz</div>
       <div class="msub">Mutaxassislarimiz sizga qo'ng'iroq qilishadi.</div>
       <div class="fg"><label>Telefon raqam</label><input type="tel" id="inp-phone" placeholder="+998 90 123 45 67"/></div>
-      <button class="sbtn" onclick="submit()">✅ Maslahat olish</button>
+      <button class="sbtn" onclick="nx(5)">Keyingisi →</button>
+    </div>
+
+    <!-- STEP 6: Qo'ng'iroq vaqti -->
+    <div class="step" id="step6">
+      <div class="mtitle">🕐 Qachon qo'ng'iroq qilsak qulay?</div>
+      <div class="msub">Ish vaqtimiz: 09:00 – 18:00.</div>
+      <div class="fg">
+        <label>Qulay vaqt</label>
+        <select id="inp-time" style="width:100%;background:var(--off);border:1px solid var(--border);border-radius:10px;padding:12px 14px;color:var(--navy);font-family:var(--fb);font-size:0.93rem;outline:none;appearance:none;cursor:pointer;">
+          <option value="">— Tanlang —</option>
+          <option>09:00 – 10:00</option>
+          <option>10:00 – 11:00</option>
+          <option>11:00 – 12:00</option>
+          <option>12:00 – 13:00</option>
+          <option>13:00 – 14:00</option>
+          <option>14:00 – 15:00</option>
+          <option>15:00 – 16:00</option>
+          <option>16:00 – 17:00</option>
+          <option>17:00 – 18:00</option>
+        </select>
+      </div>
+      <button class="sbtn" onclick="nx(6)">Keyingisi →</button>
+    </div>
+
+    <!-- STEP 7: Qo'shimcha telefon -->
+    <div class="step" id="step7">
+      <div class="mtitle">📞 Qo'shimcha telefon raqam</div>
+      <div class="msub">Asosiy raqamga chiqolmasak murojaat qilamiz.</div>
+      <div class="fg"><label>Qo'shimcha raqam</label><input type="tel" id="inp-phone2" placeholder="+998 91 123 45 67"/></div>
+      <button class="sbtn" onclick="submit()">✅ Bron qilish</button>
     </div>
 
     <!-- SUCCESS -->
     <div class="step" id="stepOk">
       <div class="scenter">
         <div class="bemoji">🎉</div>
-        <h3>Arizangiz qabul qilindi!</h3>
-        <p>Tez orada siz bilan bog'lanamiz.<br>Savollaringiz bo'lsa, pastdagi knopkani bosib Telegramdan yozing 👇</p>
+        <h3>Ma'lumotlaringiz qabul qilindi!</h3>
+        <p>Sizga tez fursatda aloqaga chiqamiz.<br>Savollaringiz bo'lsa, quyidagi tugmani bosib Telegramdan yozing 👇</p>
         <a href="https://t.me/payfly_uzb" target="_blank" class="tgbtn">
           <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.02 9.52c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.04 14.6l-2.95-.924c-.641-.204-.654-.641.136-.953l11.527-4.445c.535-.194 1.003.131.81.97z"/></svg>
           Telegramdan yozish
         </a>
       </div>
     </div>
+
+    <!-- VILOYAT -->
+    <div class="step" id="noCity">
+      <div class="scenter">
+        <div class="bemoji">🙏</div>
+        <h3>Qiziqishingiz uchun rahmat!</h3>
+        <p>Afsuski, hozircha faqat Toshkent shahrida xizmat ko'rsatamiz.<br>Savollaringiz bo'lsa, quyidagi tugmani bosib Telegramdan yozing 👇</p>
+        <a href="https://t.me/payfly_uzb" target="_blank" class="tgbtn">
+          <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.02 9.52c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.04 14.6l-2.95-.924c-.641-.204-.654-.641.136-.953l11.527-4.445c.535-.194 1.003.131.81.97z"/></svg>
+          Telegramdan yozish
+        </a>
+      </div>
+    </div>
+
   </div>
 </div>
 
