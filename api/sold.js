@@ -4,7 +4,7 @@ const PIXEL_ID      = '2013283585928690';   // PayFly Meta Pixel ID
 const ACCESS_TOKEN  = 'EAAQRGvuUf0IBRZAXAgJIVPuEwTG9g4MDUrr8sshZCYt3ZCwA6pzoCrzTIC1uxWuwbtLjMLtCD21AAe7fsiJihfQBLZBG5K5iCRhznjISMLSGs8YMP64pcIZCkn2IrEtVLS11AWyZBUvfJI0thhhVAZC2XRHKsAx2uTprLeP5KX2Xn8NKTVmn74uYgicSNdcTg9nZAAZDZD'; // PayFly CAPI token
 const AMO_TOKEN     = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImZkMzMwMWE4NWVmYWI0ZjQxMjg4NmQwYjNlMmFlMWY3MTI1Y2M5ODcwYjM5NTFlNGNlYmFhMWYwNzNkZDU0MWRjZmNhZjg5YjlhNjBmZGQ1In0.eyJhdWQiOiIyMzQ3YWI0MS0yYzQ0LTRjM2MtODQ4Mi04YTgzOWNkYWM4OGYiLCJqdGkiOiJmZDMzMDFhODVlZmFiNGY0MTI4ODZkMGIzZTJhZTFmNzEyNWNjOTg3MGIzOTUxZTRjZWJhYTFmMDczZGQ1NDFkY2ZjYWY4OWI5YTYwZmRkNSIsImlhdCI6MTc3ODc2NjMyMywibmJmIjoxNzc4NzY2MzIzLCJleHAiOjE5MzY0ODMyMDAsInN1YiI6IjEzNjk5OTk4IiwiZ3JhbnRfdHlwZSI6IiIsImFjY291bnRfaWQiOjMyOTk2MzIyLCJiYXNlX2RvbWFpbiI6ImFtb2NybS5ydSIsInZlcnNpb24iOjIsInNjb3BlcyI6WyJwdXNoX25vdGlmaWNhdGlvbnMiLCJmaWxlcyIsImNybSIsImZpbGVzX2RlbGV0ZSIsIm5vdGlmaWNhdGlvbnMiXSwiaGFzaF91dWlkIjoiNTY4NTkwNTMtODg4NC00NzgyLWEyMGYtOGU3N2EyYzc2YTQyIiwiYXBpX2RvbWFpbiI6ImFwaS1iLmFtb2NybS5ydSJ9.POQZSIVkdNC9SLk5MBvM33_h6Q8iAIf36iNiD-p4Fl6e5tQylmUCDY8UkHsJ3bnGzU9X_zRKIb2J6gJy3GAAZXqOocKd5eGSXLDbJglgUE_IPYTL2puGmkuMv8FYWKKJ3ZW1xwTl7W40EOYFZ3ydbBi7zIsopABPpyGjE2eg0T9M59zj-7KACTYKxhBDir1O-MOPABd27LbnnzfC-hgGQTfrzO2dL5il7s3KcQZ-L6yr4UGcp1h2ba4NxHkwi2QVmBv56W1oocpivl4mu0FXz-6ItOp3ijxr89PUYF8OE76UA_M3UkPgQnIh34_XokxdoMQXAw7SM3_JLogvBH_DwA';
 const AMO_SUBDOMAIN   = 'aviarailtrip';
-const SOLD_STATUS_ID  = 143;
+const SOLD_STATUS_IDS = [142];
 
 function sha256(val) {
   return crypto.createHash('sha256').update((val||'').trim().toLowerCase()).digest('hex');
@@ -31,7 +31,7 @@ module.exports = async (req, res) => {
 
       console.log(`Lead ${leadId} → etap ${statusId}`);
 
-      if (statusId === SOLD_STATUS_ID) {
+      if (SOLD_STATUS_IDS.includes(statusId)) {
         // amoCRM dan lead + contact ma'lumotlarini olish
         const leadRes = await fetch(
           `https://${AMO_SUBDOMAIN}.amocrm.ru/api/v4/leads/${leadId}?with=contacts`,
