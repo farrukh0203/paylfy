@@ -408,35 +408,19 @@
   </div>
 </section>
 
-<!-- FLIGHTS -->
+<!-- OTZIVLAR -->
 <section class="flights">
-  <div class="sec-label">Reyslar</div>
-  <h2 class="sec-title">Qaysi <span>aviakompaniyalar?</span></h2>
-  <div class="flight-grid">
-    <div class="flight-card reveal">
-      <div class="flight-icon">🇪🇬</div>
-      <div>
-        <div class="flight-dest">Sharm el-Sheikh</div>
-        <div class="flight-info">Deyarli har kuni reyslar bor. Turli aviakompaniyalar, narxlar nisbatan qulay. Uchish vaqti 6–6.5 soat.</div>
-        <span class="flight-airline">✈️ To'g'ridan to'g'ri reys</span>
-      </div>
-    </div>
-    <div class="flight-card reveal" style="transition-delay:0.08s">
-      <div class="flight-icon">🏙️</div>
-      <div>
-        <div class="flight-dest">Kuşadası / Izmir</div>
-        <div class="flight-info">Egey sohiliga eng qulay kirish. To'g'ridan to'g'ri reyslar mavjud.</div>
-        <span class="flight-airline">✈️ Fly Khiva</span>
-      </div>
-    </div>
-    <div class="flight-card reveal" style="transition-delay:0.12s">
-      <div class="flight-icon">🏖️</div>
-      <div>
-        <div class="flight-dest">Bodrum / Marmaris</div>
-        <div class="flight-info">Premium Egey yo'nalishlari. Uzbekistan Airways reyslar bilan qulay.</div>
-        <span class="flight-airline">✈️ Uzbekistan Airways</span>
-      </div>
-    </div>
+  <div class="sec-label">Mijozlarimiz fikri</div>
+  <h2 class="sec-title">Ular <span>nima deydi?</span></h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;max-width:1100px;margin:0 auto;">
+    <div class="reveal" style="border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(10,42,110,0.1);"><img src="2.jpg" alt="Otziv 1" style="width:100%;height:100%;object-fit:cover;display:block;"/></div>
+    <div class="reveal" style="border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(10,42,110,0.1);transition-delay:0.05s"><img src="3.jpg" alt="Otziv 2" style="width:100%;height:100%;object-fit:cover;display:block;"/></div>
+    <div class="reveal" style="border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(10,42,110,0.1);transition-delay:0.08s"><img src="4.jpg" alt="Otziv 3" style="width:100%;height:100%;object-fit:cover;display:block;"/></div>
+    <div class="reveal" style="border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(10,42,110,0.1);transition-delay:0.11s"><img src="5.jpg" alt="Otziv 4" style="width:100%;height:100%;object-fit:cover;display:block;"/></div>
+    <div class="reveal" style="border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(10,42,110,0.1);transition-delay:0.14s"><img src="6.jpg" alt="Otziv 5" style="width:100%;height:100%;object-fit:cover;display:block;"/></div>
+    <div class="reveal" style="border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(10,42,110,0.1);transition-delay:0.17s"><img src="7.jpg" alt="Otziv 6" style="width:100%;height:100%;object-fit:cover;display:block;"/></div>
+    <div class="reveal" style="border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(10,42,110,0.1);transition-delay:0.2s"><img src="8.jpg" alt="Otziv 7" style="width:100%;height:100%;object-fit:cover;display:block;"/></div>
+    <div class="reveal" style="border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(10,42,110,0.1);transition-delay:0.23s"><img src="9.jpg" alt="Otziv 8" style="width:100%;height:100%;object-fit:cover;display:block;"/></div>
   </div>
 </section>
 
@@ -483,8 +467,7 @@
       <div class="sdot" id="sd3"></div>
       <div class="sdot" id="sd4"></div>
       <div class="sdot" id="sd5"></div>
-      <div class="sdot" id="sd6"></div>
-      <div class="sdot" id="sd7"></div>
+      
     </div>
 
     <!-- STEP 1: Yo'nalish -->
@@ -503,34 +486,24 @@
       <button class="cbtn" onclick="gs('noCity')"><span class="ci">🗺️</span>Viloyat</button>
     </div>
 
-    <!-- STEP 3: Kim bilan -->
+    <!-- STEP 3: Ism -->
     <div class="step" id="step3">
-      <div class="mtitle">👨‍👩‍👧 Kim bilan borasiz?</div>
-      <div class="msub">Eng mos tur paketni tavsiya qilishimiz uchun.</div>
-      <button class="cbtn" onclick="setG('Oilam bilan (bolalar bor)');gs(4)"><span class="ci">👨‍👩‍👧</span>Oilam bilan (bolalar bor)</button>
-      <button class="cbtn" onclick="setG('Turmush o\'rtog\'im bilan');gs(4)"><span class="ci">💑</span>Turmush o'rtog'im bilan</button>
-      <button class="cbtn" onclick="setG('Do\'stlarim bilan');gs(4)"><span class="ci">👫</span>Do'stlarim bilan</button>
-      <button class="cbtn" onclick="setG('Bir o\'zim boraman');gs(4)"><span class="ci">🧳</span>Bir o'zim boraman</button>
-    </div>
-
-    <!-- STEP 4: Ism -->
-    <div class="step" id="step4">
       <div class="mtitle">👤 Ismingizni yozing</div>
       <div class="msub">Siz bilan muloqot qilishimiz uchun kerak.</div>
       <div class="fg"><label>Ism</label><input type="text" id="inp-name" placeholder="Masalan: Dilnoza"/></div>
-      <button class="sbtn" onclick="nx(4)">Keyingisi →</button>
+      <button class="sbtn" onclick="nx(3)">Keyingisi →</button>
     </div>
 
     <!-- STEP 5: Telefon -->
-    <div class="step" id="step5">
+    <div class="step" id="step4">
       <div class="mtitle">📱 Telefon raqamingiz</div>
       <div class="msub">Mutaxassislarimiz sizga qo'ng'iroq qilishadi.</div>
       <div class="fg"><label>Telefon raqam</label><input type="tel" id="inp-phone" placeholder="+998 90 123 45 67"/></div>
-      <button class="sbtn" onclick="nx(5)">Keyingisi →</button>
+      <button class="sbtn" onclick="nx(4)">Keyingisi →</button>
     </div>
 
     <!-- STEP 6: Qo'ng'iroq vaqti -->
-    <div class="step" id="step6">
+    <div class="step" id="step5">
       <div class="mtitle">🕐 Qachon qo'ng'iroq qilsak qulay?</div>
       <div class="msub">Ish vaqtimiz: 09:00 – 18:00.</div>
       <div class="fg">
@@ -548,16 +521,9 @@
           <option>17:00 – 18:00</option>
         </select>
       </div>
-      <button class="sbtn" onclick="nx(6)">Keyingisi →</button>
-    </div>
-
-    <!-- STEP 7: Qo'shimcha telefon -->
-    <div class="step" id="step7">
-      <div class="mtitle">📞 Qo'shimcha telefon raqam</div>
-      <div class="msub">Asosiy raqamga chiqolmasak murojaat qilamiz.</div>
-      <div class="fg"><label>Qo'shimcha raqam</label><input type="tel" id="inp-phone2" placeholder="+998 91 123 45 67"/></div>
       <button class="sbtn" onclick="submit()">✅ Bron qiling</button>
     </div>
+
 
     <!-- SUCCESS -->
     <div class="step" id="stepOk">
@@ -589,7 +555,7 @@
 </div>
 
 <script>
-  let fd = { dest:'', city:'', group:'', name:'', phone:'', time:'', phone2:'' };
+  let fd = { dest:'', city:'', group:'', name:'', phone:'', time:'' };
 
   function openModal(dest) {
     document.getElementById('modalOverlay').classList.add('open');
@@ -621,26 +587,20 @@
   function setG(v) { fd.group = v; }
 
   function nx(s) {
-    if (s===4) {
+    if (s===3) {
       const v=document.getElementById('inp-name').value.trim();
       if(!v){alert('Iltimos, ismingizni kiriting.');return;}
       fd.name=v;
     }
-    if (s===5) {
+    if (s===4) {
       const v=document.getElementById('inp-phone').value.trim();
       if(!v){alert('Iltimos, telefon raqamingizni kiriting.');return;}
       fd.phone=v;
-    }
-    if (s===6) {
-      const v=document.getElementById('inp-time').value;
-      if(!v){alert('Iltimos, qulay vaqtni tanlang.');return;}
-      fd.time=v;
     }
     gs(s+1);
   }
 
   async function submit() {
-    fd.phone2 = document.getElementById('inp-phone2').value.trim();
     showStep('stepOk'); updateDots('done');
 
     const eid = 'lead_'+Date.now()+'_'+Math.random().toString(36).slice(2);
