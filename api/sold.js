@@ -59,7 +59,7 @@ module.exports = async (req, res) => {
 
         console.log(`Contact: ${firstName}, ${phone}`);
 
-        if (PIXEL_ID !== '2013283585928690') {
+        {
           const userData = { client_user_agent: 'amoCRM' };
           if (phone)     userData.ph = sha256(phone);
           if (firstName) userData.fn = sha256(firstName);
@@ -83,7 +83,6 @@ module.exports = async (req, res) => {
           );
           const capiData = await capiRes.json();
           console.log(`Lead ${leadId} — Purchase yuborildi:`, JSON.stringify(capiData));
-        }
       }
       i++;
     }
